@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal App</title>
+</head>
+<link rel="stylesheet" href="./style/style.css">
+<!--Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=M+PLUS+Rounded+1c:wght@800&family=Montserrat:wght@800&family=Permanent+Marker&family=Poppins:wght@300;600;700&family=Rubik:wght@500&family=Space+Grotesk:wght@300&display=swap" rel="stylesheet">
+<!--Fonts End-->
+<!--icons-->
+<script src="https://kit.fontawesome.com/adfd04e546.js" crossorigin="anonymous"></script>
+<!--icons-->
+<body>
+    
+    <div id="home">
+        <div id="blur2"></div>
+        <!--time-->
+        <div id="sidebar">
+            <p id="t1">3:30</p>
+            <div id="t2"><p id="t3">3:30</p></div>
+            <div id="t4"><p id="t5">2024</p></div>
+        </div>
+        <!--time ends-->
+        <div id="appbar">
+            <!--apps-->
+            <div class="app" data-purpose="search" data-tabs="0">
+            <i class="fa-brands fa-searchengin"></i>
+        </div>
+        <div class="app" data-purpose="code" data-tabs="0">
+            <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="app" data-purpose="files" data-tabs="0">
+            <i class="fa-solid fa-folder-closed"></i>
+        </div>
+      
+        <div class="app" data-purpose="music" id="music" data-tabs="0">
+            <i class="fa-solid fa-music"></i>
+        </div>
+        <div class="app" data-purpose="diary" data-tabs="0">
+            <i class="fa-solid fa-book"></i>
+        </div>
+        <div class="app" data-purpose="chat" data-tabs="0">
+            <i class="fa-solid fa-message"></i>
+        </div>
+        <div class="app" data-purpose="browser" data-tabs="0">
+            <i class="fa-brands fa-firefox"></i>
+        </div>
+        <div class="app" data-purpose="games" data-tabs="0">
+            <i class="fa-brands fa-d-and-d"></i>
+        </div>
+        <div class="app" data-purpose="settings" data-tabs="0">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+                     <!--apps-->
+        </div>
+         <!--Chatbot Creation-->
+         <div id="chatbot"></div>
+         <!--Chatbot creation ends-->
+    </div>
+    <div id="load">
+        <div id="logo"></div>
+    </div>
+</body>
+<!--Script for apps-->
+<!--!!!!!!!!!!!!!!!!!-->
+<!--Diary-->
+<script src="./appscripts/diary.js"></script>
+<!--Diary ends-->
+<!--!!!!!!!!!!!!!!!!!-->
+<!--Script for apps ends-->
+<!--Dynamic Script for web-->
+<script src="./script.js"></script>
+<!--Dynamic Script for web-->
+</html>
