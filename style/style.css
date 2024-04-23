@@ -60,7 +60,7 @@ flex-flow:column;
 #logo{
     width: 40vw;
     height: 40vw;
-    background: url("./logo.png");
+    background: url("https://raw.githubusercontent.com/ShrianshGoel/software/main/style/logo.png");
     background-size: contain;
     opacity: 0;
     filter: drop-shadow(-10px -10px 10px rgb(16, 17, 18));
