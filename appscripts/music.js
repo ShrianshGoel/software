@@ -1,5 +1,7 @@
-var Playlist_name=0;
 
+var url=[],counter=0,isactive=0,no=0;
+var playname=[];
+var prevtilepostiion=15;
 function evente(){
 const rect=document.querySelector(".addwindow").getBoundingClientRect();
 
@@ -17,6 +19,8 @@ function createPlaylistWindow(){
    
 }
 document.querySelector("#add").addEventListener("click",()=>{
+if(isactive===0){
+    isactive=1;
     const Pwindow=document.createElement("div");
     Pwindow.className="addwindow";
     const input=document.createElement("input");
@@ -39,8 +43,10 @@ document.querySelector("#add").addEventListener("click",()=>{
     document.querySelector(".addwindow").appendChild(cursor);
     document.querySelector(".addwindow").appendChild(next);
     evente();
+    
     next.addEventListener("click",function(){
-     Playlist_name=input.value;
+        if(counter===0&&input.value!=""){
+     playname.push(input.value);
      document.querySelector(".addwindow").appendChild(picdiv);
      document.querySelector(".picdiv").appendChild(pic);
      input.style.left="-80%";
@@ -58,11 +64,42 @@ document.querySelector("#add").addEventListener("click",()=>{
         dispic.style.backgroundSize="cover";
         dispic.style.backgroundPosition="center";
         dispic.style.transition="all 400ms";
-        
+        url.push(img);
      });
      reader.readAsDataURL(this.files[0]);
     });
+    counter=1;
+}
+ else if(input.value!=""){
+counter=0;
+document.querySelector(".window").removeChild(document.querySelector(".addwindow"));
+isactive=0;
+no++;
+displayPlaylist();
+}
 });
-   
+}   
 
 });
+function displayPlaylist(){
+const panel=document.querySelector(".musicdisplaypanel");
+const playlisttile=document.createElement("div");
+const tilepic=document.createElement("div");
+tilepic.className="tilepic";
+tilepic.style.background=`url('${url[url.length-1]}')`;
+tilepic.style.backgroundSize="cover";
+playlisttile.dataset.songs=[];
+playlisttile.className="tile";
+playlisttile.innerHTML=playname[playname.length-1];
+if(no!=1){
+    playlisttile.style.top=prevtilepostiion+"%";
+}
+prevtilepostiion=prevtilepostiion+15;
+
+panel.appendChild(playlisttile);
+playlisttile.appendChild(tilepic);
+playlisttile.addEventListener("click",openpanel);
+}
+function openpanel(){
+    alert("hello");
+}
