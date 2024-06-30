@@ -11,6 +11,9 @@ html{
 ::selection{
     background: crimson;
 }
+::-webkit-scrollbar{
+    background: transparent;
+}
 /*Fonts*
 font-family: 'Lobster', sans-serif;
 font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -60,14 +63,15 @@ flex-flow:column;
 #logo{
     width: 40vw;
     height: 40vw;
-    background: url("https://raw.githubusercontent.com/ShrianshGoel/software/main/style/logo.png");
-    background-size: cover;
+    background: url("./logo.png");
+    background-size: contain;
     opacity: 0;
     filter: drop-shadow(-10px -10px 10px rgb(16, 17, 18));
     animation-name:appear;
     animation-duration: 2.3s;
     animation-delay: 1.7s;
     animation-iteration-count: 1;
+    border-radius: 50%;
 }
 
 #home{
@@ -436,6 +440,7 @@ justify-content:flex-start;
 flex-wrap: nowrap;
 gap :24px;
 flex-flow: column;
+overflow-y: scroll;
 }
 .mainpanel{
     border-radius: 17px;
@@ -544,6 +549,7 @@ border-radius: 100%;
 position: fixed;
 top:-19px;
 left:-19px;
+z-index: 1;
 transition: all 0.3s;
 transform: translate(-50%,-50%);
 }
@@ -571,7 +577,7 @@ transform: translate(-50%,-50%);
     letter-spacing: 2px;
 }
 .picdiv{
-    animation-name: appear;
+    animation-name: appear1;
     animation-duration: 1s;
     
     width: 14vw;
@@ -628,7 +634,37 @@ transform: translate(-50%,-50%);
     z-index: 990;
     border-radius: 100%;
 }
-
+.tile{
+    position: absolute;
+    top:15%;
+    left: 10%;
+    width: 22vw;
+    height: 9vh;
+    background: var(--rich-black);
+    border-radius: 7px;
+text-align: center;
+line-height: 9vh;
+color: crimson;
+font-size: 1.3rem;
+cursor: pointer;
+transition: all 100ms;
+font-weight: bold;
+font-family: 'Permanent Marker', cursive;
+}
+.tile:hover{
+    transform: translateY(-2%);
+    box-shadow: 0 0 0px var(--rich-black),0 0 40px var(--rich-black),0 0 80px var(--rich-black);
+}
+.tilepic{
+    content: '';
+    position: absolute;
+    top:9%;
+    left: 5%;
+    width: 18%;
+    height: 79%;
+    background: beige;
+    border-radius: 7px;
+}
 /*expiremintal*/
 
 /*Chatbot styling and animations ends*/
@@ -725,7 +761,7 @@ transform: translate(-50%,-50%);
 }
 /*blob animations*/
 /*input animations starts*/
-@keyframes appear{
+@keyframes appear1{
     0%{
         transform: scale(0);
     }
